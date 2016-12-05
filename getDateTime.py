@@ -6,7 +6,10 @@
 
 # Read date & time from Google server
 
-import socket
+import os, socket
+
+print("Running getDateTime.py on firmware version %s" % os.uname().release)
+
 addr = socket.getaddrinfo('www.google.ch', 80)[0][-1]
 
 debug = False
