@@ -10,8 +10,8 @@ import machine
 import time
 
 # Credentials for WLAN
-SSID = 'FRITZ!Box Fon WLAN 7390'
-KEY  = '6610601496452117'
+SSID = 'FR....90' # use your own credentials
+KEY  = '66....17' # use your own credentials
 
 # setup as a station
 wlan = network.WLAN(mode=WLAN.STA)
@@ -35,9 +35,9 @@ apin = adc.channel(pin='P16')   # create an analog pin on P16 & connect TMP36
 lora = LoRa(mode=LoRa.LORAWAN)
 
 # create an ABP authentication params
-dev_addr = struct.unpack(">l", binascii.unhexlify('26011911'.replace(' ','')))[0]
-nwk_swkey = binascii.unhexlify('08C37FEF034277CD7F7E2063E174B968'.replace(' ',''))
-app_swkey = binascii.unhexlify('653064AAAECF140CB11EB882535E1549'.replace(' ',''))
+dev_addr = struct.unpack(">l", binascii.unhexlify('00000000'.replace(' ','')))[0] # change
+nwk_swkey = binascii.unhexlify('08......968'.replace(' ','')) # change
+app_swkey = binascii.unhexlify('65......549'.replace(' ','')) # change
 
 # join a network using ABP (Activation By Personalization)
 lora.join(activation=LoRa.ABP, auth=(dev_addr, nwk_swkey, app_swkey))
