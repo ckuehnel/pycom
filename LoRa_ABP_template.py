@@ -1,6 +1,6 @@
 # LoRa_ABP.py
 # LoPy LoRaWAN Node measures temperature by TMP36 sensors and sends data to TTN
-# 2017-05-06 Claus Kuehnel info[at]ckuehnel.ch
+# 2017-03-06 Claus Kuehnel info[at]ckuehnel.ch
 
 import network
 from network import LoRa
