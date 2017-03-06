@@ -22,7 +22,7 @@ lora = LoRa(mode=LoRa.LORAWAN)
 # create an ABP authentication params
 dev_addr = struct.unpack(">l", binascii.unhexlify('<Your DevAddr>'.replace(' ','')))[0]
 nwk_swkey = binascii.unhexlify('<Your network key>'.replace(' ',''))
-app_swkey = binascii.unhexlify('<Yout app key'.replace(' ',''))
+app_swkey = binascii.unhexlify('<Your app key'.replace(' ',''))
 
 # join a network using ABP (Activation By Personalization)
 lora.join(activation=LoRa.ABP, auth=(dev_addr, nwk_swkey, app_swkey))
