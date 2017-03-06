@@ -1,5 +1,8 @@
+# LoRa_ABP.py
+# LoPy LoRaWAN Node measures temperature by TMP36 sensors and sends data to TTN
+# 2017-05-06 Claus Kuehnel info[at]ckuehnel.ch
+
 import network
-from network import WLAN
 from network import LoRa
 import socket
 import binascii
@@ -7,24 +10,6 @@ import struct
 import pycom
 import utime   
 import machine
-import time
-
-# Credentials for WLAN
-SSID = '<Your SSID>'
-KEY  = '<Your Password>'
-
-# setup as a station
-wlan = network.WLAN(mode=WLAN.STA)
-wlan.connect(SSID, auth=(WLAN.WPA2,KEY))
-
-print("Try to connect...")
-while not wlan.isconnected():
-    time.sleep_ms(100)
-    print(".",  end="")
-
-print("")   
-print("Connected.")
-print('IP address:', wlan.ifconfig()[0])
 
 pycom.heartbeat(False)
 
